@@ -51,5 +51,5 @@ dispatcher.add_handler(MessageHandler(Filters.text, get_link))
 updater.start_webhook(listen="0.0.0.0",
                       port=int(os.environ.get('PORT', 5243)),
                       url_path=telegram_bot_token,
-                      webhook_url=  + telegram_bot_token
+                      webhook_url= 'https://hrtzunlk.herokuapp.com/' + telegram_bot_token
                       )
