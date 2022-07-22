@@ -5,14 +5,13 @@ import os
 import re
 
 telegram_bot_token = os.environ['TGRM_TKN']
-
 updater = Updater(token=telegram_bot_token, use_context=True)
 dispatcher = updater.dispatcher
 
 # set up the introductory statement for the bot when the /start command is invoked
 def start(update, context):
     chat_id = update.effective_chat.id
-    context.bot.send_message(chat_id=chat_id, text="Paste a locked link and I'll unlock it...")
+    context.bot.send_message(chat_id=chat_id, text="Paste a link and I'll unlock it...")
 
 def _transform_link(orig_link):
     orig_link = orig_link.split("?")[0]
