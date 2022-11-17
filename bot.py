@@ -57,5 +57,5 @@ if telegram_bot_token != 'TEST':
     updater.start_webhook(listen="0.0.0.0",
                         port=int(os.environ.get('PORT', 5243)),
                         url_path=telegram_bot_token,
-                        webhook_url= 'https://hrtzunlk.herokuapp.com/' + telegram_bot_token
+                        webhook_url= 'https://hrtzunlk.up.railway.app/' + telegram_bot_token
                         )
