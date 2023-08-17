@@ -43,6 +43,7 @@ def get_link(update, context):
 
 telegram_bot_token = os.environ['TGRM_TKN']
 if telegram_bot_token != 'TEST':
+    print("### Starting updater")
     updater = Updater(token=telegram_bot_token, use_context=True)
     dispatcher = updater.dispatcher
 
@@ -54,9 +55,11 @@ if telegram_bot_token != 'TEST':
     dispatcher.add_handler(MessageHandler(Filters.text, get_link))
 
     # updater.start_polling()
+    print("### Starting webhook")
     updater.start_webhook(listen="0.0.0.0",
                         port=int(os.environ.get('PORT', 5243)),
                         url_path=telegram_bot_token,
                         webhook_url= 'https://hrtzunlk-royabitbol.b4a.run/' + telegram_bot_token
                         # webhook_url= 'https://hrtzunlk.up.railway.app/' + telegram_bot_token
                         )
+    print("### Started")
