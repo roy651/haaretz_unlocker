@@ -6,7 +6,7 @@ import re
 
 # set up the introductory statement for the bot when the /start command is invoked
 def start(update, context):
-    print("### on start()")
+    print("### V2 on start()")
     chat_id = update.effective_chat.id
     context.bot.send_message(chat_id=chat_id, text="Paste a link and I'll unlock it...")
 
@@ -34,7 +34,7 @@ def _transform_link(orig_link):
 
 # obtain the information of the word provided and format before presenting.
 def get_link(update, context):
-    print("### on get_link()")
+    print("### V2 on get_link():: from:" + update.message.from_user.username)
     # get the word info
     unlock_link = _transform_link(update.message.text)
     update.message.reply_text(unlock_link)
@@ -64,4 +64,4 @@ if telegram_bot_token != 'TEST':
                         webhook_url= 'https://hrtzunlk-royabitbol.b4a.run/' + telegram_bot_token
                         # webhook_url= 'https://hrtzunlk.up.railway.app/' + telegram_bot_token
                         )
-    print("### Started: " + 'https://hrtzunlk-royabitbol.b4a.run/' + telegram_bot_token)
+    print("### Started V2: " + 'https://hrtzunlk-royabitbol.b4a.run/' + telegram_bot_token)
