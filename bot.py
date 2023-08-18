@@ -45,7 +45,7 @@ def get_link(update, context):
 
 telegram_bot_token = os.environ['TGRM_TKN']
 if telegram_bot_token != 'TEST':
-    print("### Starting updater")
+    print("### Starting updater: " + telegram_bot_token)
     updater = Updater(token=telegram_bot_token, use_context=True)
     dispatcher = updater.dispatcher
 
