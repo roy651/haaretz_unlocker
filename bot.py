@@ -34,7 +34,7 @@ def _transform_link(orig_link):
 
 # obtain the information of the word provided and format before presenting.
 def get_link(update, context):
-    _user = update.message.from_user.username if update.message.from_user else "NA"
+    _user = update.message.chat.username if update.message.chat else "NA"
     print("### V2 on get_link():: from:" + _user)
     # get the word info
     unlock_link = _transform_link(update.message.text)
@@ -58,7 +58,7 @@ if telegram_bot_token != 'TEST':
     dispatcher.add_handler(MessageHandler(Filters.text, get_link))
 
     # updater.start_polling()
-    print("### Starting webhook")
+    print("### Starting V2 webhook")
     updater.start_webhook(listen="0.0.0.0",
                         port=int(os.environ.get('PORT', 5243)),
                         url_path=telegram_bot_token,
