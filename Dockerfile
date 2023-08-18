@@ -7,7 +7,7 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-EXPOSE 80/tcp
+EXPOSE 5243/tcp
 
 CMD [ "python3", "bot.py" ]
 
