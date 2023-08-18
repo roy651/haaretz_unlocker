@@ -35,7 +35,7 @@ def _transform_link(orig_link):
 # obtain the information of the word provided and format before presenting.
 def get_link(update, context):
     _user = update.message.chat.username if update.message.chat else "NA"
-    print("### V2 on get_link():: from:" + _user)
+    print("### V2 on get_link():: from:" + str(_user))
     # get the word info
     unlock_link = _transform_link(update.message.text)
     update.message.reply_text(unlock_link)
