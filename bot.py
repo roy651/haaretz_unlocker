@@ -64,4 +64,4 @@ if telegram_bot_token != 'TEST':
                         webhook_url= 'https://hrtzunlk-royabitbol.b4a.run/' + telegram_bot_token
                         # webhook_url= 'https://hrtzunlk.up.railway.app/' + telegram_bot_token
                         )
-    print("### Started")
+    print("### Started: " + 'https://hrtzunlk-royabitbol.b4a.run/' + telegram_bot_token)
